@@ -1,0 +1,46 @@
+{
+  "title": "The Daily Brief",
+  "timezone_offset_hours": -5,
+  "news_window_hours": 30,
+  "research_window_days": 7,
+  "contact_email": "your-email@example.com",
+
+  "english": [
+    {"name": "Reuters",  "url": "https://news.google.com/rss/search?q=when:1d+site:reuters.com&hl=en-US&gl=US&ceid=US:en", "max": 5, "home": "https://www.reuters.com/world/"},
+    {"name": "AP",       "url": "https://news.google.com/rss/search?q=when:1d+site:apnews.com&hl=en-US&gl=US&ceid=US:en", "max": 5, "home": "https://apnews.com/world-news"},
+    {"name": "BBC News", "url": "https://feeds.bbci.co.uk/news/world/rss.xml", "max": 5, "home": "https://www.bbc.com/news/world"},
+    {"name": "The Guardian", "url": "https://www.theguardian.com/world/rss", "max": 4, "home": "https://www.theguardian.com/world"},
+    {"name": "The New York Times", "url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml", "max": 4, "home": "https://www.nytimes.com/section/world"},
+    {"name": "NPR", "url": "https://feeds.npr.org/1004/rss.xml", "max": 3, "home": "https://www.npr.org/sections/world/"}
+  ],
+
+  "spanish": [
+    {"name": "El País", "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada", "max": 5, "home": "https://elpais.com/"},
+    {"name": "BBC Mundo", "url": "https://feeds.bbci.co.uk/mundo/rss.xml", "max": 5, "home": "https://www.bbc.com/mundo"},
+    {"name": "DW Español", "url": "https://rss.dw.com/xml/rss-sp-all", "max": 4, "home": "https://www.dw.com/es/"},
+    {"name": "France 24 Español", "url": "https://www.france24.com/es/rss", "max": 3, "home": "https://www.france24.com/es/"},
+    {"name": "El Mundo", "url": "https://e00-elmundo.uecdn.es/elmundo/rss/portada.xml", "max": 3, "home": "https://www.elmundo.es/"},
+    {"name": "Clarín", "url": "https://www.clarin.com/rss/lo-ultimo/", "max": 3, "home": "https://www.clarin.com/"}
+  ],
+
+  "research": [
+    {"desk": "bench", "label": "NAD⁺ & mitochondrial delivery",
+     "query": "(NAD+ OR \"nicotinamide adenine dinucleotide\" OR NMN OR \"nicotinamide riboside\" OR NAMPT) AND mitochondri* AND (vascular OR aorta* OR vein OR endothelial OR \"smooth muscle\" OR nanoparticle* OR liposom* OR \"drug delivery\")"},
+    {"desk": "bench", "label": "Abdominal aortic aneurysm",
+     "query": "(\"aortic aneurysm\"[tiab]) AND (mouse OR mice OR murine OR rat OR elastase OR \"angiotensin II\" OR mechanis*)"},
+    {"desk": "bench", "label": "DVT / venous thrombosis",
+     "query": "(\"venous thrombosis\"[tiab] OR \"vein thrombosis\"[tiab] OR \"venous thromboembolism\"[tiab]) AND (mouse OR mice OR murine OR \"vena cava\" OR neutrophil* OR NET*)"},
+    {"desk": "bench", "label": "Carotid injury / angioplasty",
+     "query": "(carotid[tiab]) AND (\"balloon injury\" OR angioplasty OR \"wire injury\" OR ligation OR restenosis OR neointima*)"},
+    {"desk": "bench", "label": "Vein graft / jugular transplant",
+     "query": "(\"vein graft\"[tiab] OR \"venous graft\"[tiab] OR (\"jugular vein\"[tiab] AND (graft* OR transplant*))) AND (neointima* OR remodeling OR failure OR hyperplasia)"},
+    {"desk": "bench", "label": "PAD2 & TBI",
+     "query": "((PADI2 OR PAD2 OR \"peptidylarginine deiminase\" OR citrullin*) AND (brain OR neuro* OR TBI OR astrocyt*)) OR ((\"traumatic brain injury\"[tiab]) AND (neutrophil* OR \"extracellular trap*\" OR citrullin*))"},
+    {"desk": "path", "label": "GI pathology",
+     "query": "(gastrointestinal OR colorectal OR colon* OR gastric OR esophag* OR \"inflammatory bowel\" OR liver OR hepat* OR pancrea* OR appendi* OR anal) AND (\"Am J Surg Pathol\"[ta] OR \"Mod Pathol\"[ta] OR \"Histopathology\"[ta] OR \"Virchows Arch\"[ta] OR \"Hum Pathol\"[ta] OR \"Arch Pathol Lab Med\"[ta] OR \"Am J Clin Pathol\"[ta])"},
+    {"desk": "path", "label": "GYN pathology",
+     "query": "(endometri* OR ovar* OR cervi* OR uter* OR vulv* OR placent* OR gestational OR \"fallopian tube\") AND (\"Am J Surg Pathol\"[ta] OR \"Int J Gynecol Pathol\"[ta] OR \"Mod Pathol\"[ta] OR \"Histopathology\"[ta] OR \"Virchows Arch\"[ta] OR \"Hum Pathol\"[ta])"},
+    {"desk": "path", "label": "General diagnostic pathology",
+     "query": "(\"Am J Surg Pathol\"[ta] OR \"Mod Pathol\"[ta] OR \"Arch Pathol Lab Med\"[ta]) NOT (gastrointestinal OR colorectal OR gastric OR liver OR pancrea* OR endometri* OR ovar* OR cervi* OR uter*)"}
+  ]
+}
