@@ -1,0 +1,35 @@
+name: Build daily brief
+
+on:
+  schedule:
+    - cron: "0 11 * * *"   # 11:00 UTC = 6 am Chicago in summer, 5 am in winter
+  workflow_dispatch:        # "Run workflow" button for a manual refresh
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-brief
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build page
+        env:
+          NCBI_EMAIL: ${{ secrets.NCBI_EMAIL }}
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+        run: python build.py
+      - name: Publish
+        run: |
+          git config user.name  "daily-brief-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs
+          git diff --cached --quiet || git commit -m "Daily brief $(date -u +%F)"
+          git push
